@@ -81,3 +81,12 @@ while simounao and quantidadeinicial != 0:
             print("Você perdeu")
         print("A quantidade de fichas é {0}".format(quantidadeinicial))
 
+    if aposta_comeout == "Twelve":
+        if somapoint == 12:
+            quantidadeinicial += (30* valordaaposta)
+            print("Você ganhou!")
+        else:
+            quantidadeinicial -= valordaaposta
+            print("Você perdeu")
+        print("A quantidade de fichas é {0}".format(quantidadeinicial))
+
