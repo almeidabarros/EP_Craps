@@ -89,4 +89,29 @@ while simounao and quantidadeinicial != 0:
             quantidadeinicial -= valordaaposta
             print("Você perdeu")
         print("A quantidade de fichas é {0}".format(quantidadeinicial))
+    if pointnormal:
+        print ("Fase: Point")
+        print("Opções: Field, Any Craps, Twelve")
+        aposta_point = input("Qual tipo de aposta você deseja fazer? ")
+        valordaaposta2 = int(input("Quanto você deseja apostar? "))
+        dado6 = random.randint(1,6)
+        dado7 = random.randint(1,6)
+        soma2 = dado6 + dado7
+        print("A soma de dados é {0}".format(soma2))
 
+        if aposta_point == "Field":
+                if soma2 == 12:
+                    quantidadeinicial += (3* valordaaposta2)
+                    print("Você ganhou!")
+                elif soma2 == 2:
+                    quantidadeinicial += (2* valordaaposta2)
+                    print("Você ganhou!")
+                else:
+                    if soma2 == 5 or soma2 == 6 or soma2 == 7 or soma2 == 8:
+                        quantidadeinicial = 0
+                        print("Você perdeu")
+                        break
+                    else:
+                        quantidadeinicial += valordaaposta2
+                        print("Você ganhou!")
+                print("A quantidade de fichas é {0}".format(quantidadeinicial))
