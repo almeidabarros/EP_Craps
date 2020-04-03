@@ -72,3 +72,12 @@ while simounao and quantidadeinicial != 0:
                 print("Você ganhou!")
         print("A quantidade de fichas é {0}".format(quantidadeinicial))
 
+    if aposta_comeout == "Any Craps":
+        if somapoint == 2 or somapoint == 3 or somapoint == 12:
+            quantidadeinicial += (7*valordaaposta)
+            print("Você ganhou!")
+        else:
+            quantidadeinicial -= valordaaposta
+            print("Você perdeu")
+        print("A quantidade de fichas é {0}".format(quantidadeinicial))
+
