@@ -25,3 +25,32 @@ while simounao and quantidadeinicial != 0:
     dado2=random.randint(1,6)
     somapoint = dado1 + dado2
     print("A soma dos dados foi {0}".format(somapoint))
+    if aposta_comeout == "Pass Line Bet":
+        if somapoint == 7 or somapoint ==11:
+            quantidadeinicial += valordaaposta
+            print("Você ganhou!")
+            print("A quantidade de fichas é {0}".format(quantidadeinicial))
+        elif somapoint == 2 or somapoint == 3 or somapoint == 12:
+            quantidadeinicial -= valordaaposta
+            print("Você perdeu")
+            print("A quantidade de fichas é {0}".format(quantidadeinicial))
+        else:
+            print("Você foi para a fase Point.")
+            pointnormal=False
+            dado3 = random.randint(1,6)
+            dado4 = random.randint(1,6)
+            soma = dado3 + dado4
+            while soma!=7 and soma!=somapoint:
+                dado3 = random.randint(1,6)
+                dado4 = random.randint(1,6)
+                soma = dado3 + dado4
+                print("A nova soma foi {0}.".format(soma))
+            if soma == 7:
+                quantidadeinicial = 0
+                print("Você perdeu")
+                break
+            elif soma == somapoint:
+                quantidadeinicial += valordaaposta
+                print("Você ganhou!")
+                print("A quantidade de fichas é {0}".format(quantidadeinicial))    
+
